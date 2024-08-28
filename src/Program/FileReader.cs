@@ -1,29 +1,28 @@
-using System.IO;
-
-namespace Ucu.Poo.GameOfLife;
-
-public class FileReader
+using System.IO;  
+namespace Ucu.Poo.GameOfLife 
 {
-    
-    public bool[,] GetBoard()
+    public class FileReader  
     {
-        string url = "board.txt";
-        string content = File.ReadAllText(url);
-        string[] contentLines = content.Split('\n');
-        bool[,] board = new bool[contentLines.Length, contentLines[0].Length];
-
-        for (int y = 0; y < contentLines.Length; y++)
+        public bool[,] GetBoard()  // Método que lee el archivo "board.txt" y devuelve un tablero en forma de matriz de booleanos.
         {
-            for (int x = 0; x < contentLines[y].Length; x++)
+            string url = "board.txt";  // Define la ruta del archivo a leer.
+            string content = File.ReadAllText(url);  // Lee todo el contenido del archivo como un string.
+            string[] contentLines = content.Split('\n');  // Divide el contenido del archivo en líneas separadas por saltos de línea.
+            bool[,] board = new bool[contentLines.Length, contentLines[0].Length];  // Crea una matriz de booleanos con dimensiones basadas en el número de líneas y la longitud de la primera línea.
+
+            for (int y = 0; y < contentLines.Length; y++)  // Itera a través de cada línea del archivo.
             {
-                if(contentLines[y][x]=='1')
+                for (int x = 0; x < contentLines[y].Length; x++)  // Itera a través de cada carácter de la línea actual.
                 {
-                    board[x,y]=true;
+                    if(contentLines[y][x]=='1')  // Verifica si el carácter actual es '1'.
+                    {
+                        board[x,y]=true;  // Si es '1', establece la celda correspondiente en la matriz como `true`.
+                    }
+                    // Aquí podrías agregar un `else` para manejar los ceros ('0') si fuera necesario.
                 }
             }
-        }
 
-        return board;
+            return board;  // Retorna la matriz de booleanos que representa el tablero.
+        }    
     }    
-    
 }
