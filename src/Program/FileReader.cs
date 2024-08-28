@@ -3,9 +3,9 @@ namespace Ucu.Poo.GameOfLife
 {
     public class FileReader  
     {
-        public bool[,] GetBoard()  // Método que lee el archivo "board.txt" y devuelve un tablero en forma de matriz de booleanos.
+        public bool[,] LeerArchivo(string url)  // Método que lee el archivo "board.txt" y devuelve un tablero en forma de matriz de booleanos.
         {
-            string url = "board.txt";  // Define la ruta del archivo a leer.
+            
             string content = File.ReadAllText(url);  // Lee todo el contenido del archivo como un string.
             string[] contentLines = content.Split('\n');  // Divide el contenido del archivo en líneas separadas por saltos de línea.
             bool[,] board = new bool[contentLines.Length, contentLines[0].Length];  // Crea una matriz de booleanos con dimensiones basadas en el número de líneas y la longitud de la primera línea.
