@@ -12,7 +12,7 @@ namespace Ucu.Poo.GameOfLife
             FileReader lectorArchivo = new FileReader();
 
             //Leer el archivo de texto para obtener el estado inicial del tablero
-            bool[,] estadoInicial = lectorArchivo.LeerArchivo(RUTA_ARCHIVO);
+            bool[,] estadoInicial = lectorArchivo.LeerArchivo("board.txt");
 
             //Inicializar el tablero con el estado inicial
             Board tablero = new Board(estadoInicial);
@@ -41,3 +41,4 @@ namespace Ucu.Poo.GameOfLife
         }
     }
 }
+
