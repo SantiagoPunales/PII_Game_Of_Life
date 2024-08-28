@@ -10,3 +10,4 @@ namespace Ucu.Poo.GameOfLife
         }
     }
 }
+
