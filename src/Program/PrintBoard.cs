@@ -1,6 +1,15 @@
+/*************************************************************/
+/**** Esto generaría una responsabilidad de cambio adicio-****/
+/**** nal si se encontrara en Board, ya que si por ejem-  ****/
+/**** plo, alguien quisiera ponerle una interfaz al juego,****/
+/**** no podría por este código plantado en el Board, por ****/
+/**** lo que lo separamos.                                ****/
+/*************************************************************/
+
 using System.Text;
 using System;
 namespace Ucu.Poo.GameOfLife
+
 {
     public class PrintBoard
     {

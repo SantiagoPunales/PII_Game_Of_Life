@@ -7,7 +7,7 @@ class Program
     static void Main(string[] args)
     {
         FileReader lectorArchivo = new FileReader();
-        bool[,] estadoInicial = lectorArchivo.LeerArchivo("board.txt");
+        bool[,] estadoInicial = lectorArchivo.LeerBlocDeNotas("board.txt");
         Board tablero = new Board(estadoInicial);
         Logic logicaJuego = new Logic();
         PrintBoard impresoraTablero = new PrintBoard();
