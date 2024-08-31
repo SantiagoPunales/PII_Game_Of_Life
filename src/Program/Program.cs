@@ -1,44 +1,22 @@
 ﻿using System;
 using System.Threading;
 
-namespace Ucu.Poo.GameOfLife
+namespace Ucu.Poo.GameOfLife;
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        FileReader lectorArchivo = new FileReader();
+        bool[,] estadoInicial = lectorArchivo.LeerArchivo("board.txt");
+        Board tablero = new Board(estadoInicial);
+        Logic logicaJuego = new Logic();
+        PrintBoard impresoraTablero = new PrintBoard();
+        while (true)
         {
-            Console.WriteLine("Hello World!");
-            //Crear instancia del lector de archivos
-            FileReader lectorArchivo = new FileReader();
-
-            //Leer el archivo de texto para obtener el estado inicial del tablero
-            bool[,] estadoInicial = lectorArchivo.LeerArchivo("board.txt");
-
-            //Inicializar el tablero con el estado inicial
-            Board tablero = new Board(estadoInicial);
-
-            //Crear instancia de la lógica del juego
-            Logica logicaJuego = new Logica();
-
-            //Crear instancia de la impresora del tablero
-            PrintBoard impresoraTablero = new PrintBoard();
-
-            //Ejecutar el bucle principal del juego
-            while (true)
-            {
-                //Limpiar la consola para mostrar el nuevo estado del tablero
-                Console.Clear();
-
-                //Imprimir el tablero actual
-                impresoraTablero.Imprimir(tablero);
-
-                //Calcular la siguiente generación del tablero
-                logicaJuego.ActualizarTablero(tablero);
-
-                //Esperar un poco antes de la siguiente generación para visualizar el cambio
-                Thread.Sleep(300);
-            }
+            Console.Clear();
+            impresoraTablero.Imprimir(tablero);
+            logicaJuego.ActualizarTablero(tablero);
+            Thread.Sleep(300);
         }
     }
 }
-
