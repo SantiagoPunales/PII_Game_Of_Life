@@ -1,3 +1,9 @@
+/*************************************************************/
+/**** Este es el propio tablero y donde se definen las    ****/
+/**** células y el alto y ancho del tablero. Creemos que  ****/
+/**** de acá no hay más cosas que separar.                ****/
+/*************************************************************/
+
 namespace Ucu.Poo.GameOfLife
 {
     public class Board

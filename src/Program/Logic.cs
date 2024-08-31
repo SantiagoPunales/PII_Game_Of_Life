@@ -1,4 +1,10 @@
-
+/*************************************************************/
+/**** Acá actualiza el tablero mientras que define las    ****/
+/**** propias reglas del juego, este no fue necesario     ****/
+/**** separarlo, ya que ambas ideas van bastante de la ma-****/
+/**** no, por lo que no generaría una responsabilidad de  ****/
+/**** cambio adicional.                                   ****/
+/*************************************************************/
 
 namespace Ucu.Poo.GameOfLife
 {

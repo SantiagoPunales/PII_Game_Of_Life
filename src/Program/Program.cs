@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*************************************************************/
+/**** Acá se hacen todas las llamadas a las clases y todos****/
+/**** los diferentes métodos.                             ****/
+/*************************************************************/
+
+using System;
 using System.Threading;
 
 namespace Ucu.Poo.GameOfLife;
